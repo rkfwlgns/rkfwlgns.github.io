@@ -84,7 +84,7 @@ a:focus-visible { outline: 3px solid var(--glow); outline-offset: 3px; }
   padding: 0 1.5rem 3.5rem;
   text-align: center;
 }
-.intro h2, #contact h2 {
+.intro h2, .block h2, #contact h2 {
   font-family: var(--display);
   font-weight: 400;
   font-size: clamp(1.9rem, 4.5vw, 2.8rem);
@@ -152,6 +152,58 @@ a:focus-visible { outline: 3px solid var(--glow); outline-offset: 3px; }
   border-radius: 999px;
   background: rgba(98, 224, 208, 0.1);
   color: var(--foam);
+}
+
+/* Content sections after the timeline */
+.block {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+.groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem 3rem;
+}
+.group h3 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.marked { list-style: none; display: grid; gap: 0.9rem; }
+.marked li { position: relative; padding-left: 1.75rem; font-weight: 500; }
+.marked li::before {
+  content: "";
+  position: absolute; left: 0; top: 0.5em;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--abyss);
+  border: 3px solid var(--glow);
+  box-sizing: content-box; margin-top: -3px;
+}
+.marked span { color: var(--glow); font-weight: 400; margin-left: 0.5rem; }
+
+.links { list-style: none; display: grid; gap: 2rem; }
+.links a {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: var(--foam);
+  text-decoration-color: var(--glow);
+  text-underline-offset: 0.25em;
+}
+.links a:hover { color: var(--glow); }
+.source { margin-left: 0.75rem; color: var(--glow); font-weight: 500; }
+.links p { color: var(--mist); max-width: 34em; margin-top: 0.25rem; }
+
+/* Optional logos inside a tag: <li><img src="logos/okta.svg" alt="">Okta</li> */
+.tags li { display: inline-flex; align-items: center; }
+.tags img {
+  height: 1.05em; width: auto;
+  margin-right: 0.5rem;
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
 }
 
 /* Where the river ends */
